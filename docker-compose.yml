@@ -1,0 +1,15 @@
+version: '3'
+
+services:
+  client:
+    build: client
+    ports:
+      - 8000:3000
+  database:
+    build: database
+  server:
+    build: server
+    depends_on:
+      - database
+    ports:
+      - 3000:3000

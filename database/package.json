@@ -1,0 +1,15 @@
+{
+  "name": "docker-scuttlebot",
+  "version": "1.0.0",
+  "description": "",
+  "main": "sbot",
+  "scripts": {
+    "start": "sbot server",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "scuttlebot": "^10.4.10"
+  }
+}
