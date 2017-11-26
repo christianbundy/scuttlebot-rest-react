@@ -1,15 +1,26 @@
 version: '3'
 
+volumes:
+  database-ssb: {}
+  server-secrets: {}
+
 services:
   client:
     build: client
     ports:
       - 8000:3000
+    volumes:
+      - ./client/src:/usr/src/app/src
   database:
     build: database
+    volumes:
+      - database-ssb:/root/.ssb/
   server:
     build: server
     depends_on:
       - database
     ports:
       - 3000:3000
+    volumes:
+      - server-secrets:/mnt/secrets
+      - ./server/routes:/usr/src/app/routes

@@ -9,6 +9,8 @@ COPY package.json /usr/src/app/
 RUN npm install && npm cache clean --force
 COPY . /usr/src/app
 
+VOLUME /mnt/secrets/
+
 CMD [ "npm", "start" ]
 
 EXPOSE 3000
